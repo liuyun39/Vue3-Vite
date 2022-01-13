@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <el-button>home</el-button>
 </template>
 <script lang="ts">
 import { defineComponent, nextTick, reactive, ref } from "vue";
