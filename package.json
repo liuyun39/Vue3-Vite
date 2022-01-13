@@ -37,10 +37,7 @@
     "vue-tsc": "^0.29.8"
   },
   "lint-staged": {
-    "*.{vue, js, ts, jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{vue, js, ts, jsx}": "eslint --fix"
   },
   "config": {
     "commitizen": {

@@ -1,17 +1,17 @@
-import { createRouter, RouteLocationRaw, createWebHistory } from 'vue-router';
+import { createRouter, RouteLocationRaw, createWebHistory } from "vue-router";
 
 // TODO
 const routes = [
-  { path: '/', redirect: { name: 'Home' } },
+  { path: "/", redirect: { name: "Home" } },
   {
-    path: '/home',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "Home" */'@/views/Home.vue')
+    path: "/home",
+    name: "Home",
+    component: () => import(/* webpackChunkName: "Home" */ "@/views/Home.vue")
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "Home" */'@/views/About.vue')
+    path: "/about",
+    name: "About",
+    component: () => import(/* webpackChunkName: "Home" */ "@/views/About.vue")
   }
 ];
 
