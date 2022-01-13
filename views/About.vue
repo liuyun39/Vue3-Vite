@@ -6,10 +6,10 @@ import { defineComponent, nextTick, reactive, ref } from "vue";
 
 import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
-  name: "About",
+  name: "",
+  components: {},
   props: {},
   setup(props) {
-    const asd = 132;
     return {};
   }
 });
