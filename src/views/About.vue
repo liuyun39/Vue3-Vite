@@ -9,6 +9,7 @@ export default defineComponent({
   name: "About",
   props: {},
   setup(props) {
+    const asd = 132;
     return {};
   }
 });
