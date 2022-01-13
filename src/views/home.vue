@@ -11,7 +11,7 @@ export default defineComponent({
   name: "Home",
   props: {},
   components: {},
-  setup(props) {
+  setup() {
     return {};
   }
 });

@@ -13,6 +13,7 @@ specifiers:
   eslint-plugin-import: ^2.25.4
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.2.0
+  git-cz: ^4.8.0
   husky: ^7.0.4
   lint-staged: ^12.1.7
   pinia: ^2.0.9
@@ -42,6 +43,7 @@ devDependencies:
   eslint-plugin-import: registry.npmmirror.com/eslint-plugin-import/2.25.4_eslint@8.6.0
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.0.0_1c588f61426b1faf18812943f1678311
   eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/8.2.0_eslint@8.6.0
+  git-cz: registry.npmmirror.com/git-cz/4.8.0
   husky: registry.npmmirror.com/husky/7.0.4
   lint-staged: registry.npmmirror.com/lint-staged/12.1.7
   prettier: registry.npmmirror.com/prettier/2.5.1
@@ -3324,6 +3326,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  registry.npmmirror.com/git-cz/4.8.0:
+    resolution: {integrity: sha1-nd5YnOThLVqk7k/lTG7vX0Y15sM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/git-cz/download/git-cz-4.8.0.tgz}
+    name: git-cz
+    version: 4.8.0
+    hasBin: true
+    dev: true
 
   registry.npmmirror.com/glob-parent/5.1.2:
     resolution: {integrity: sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/glob-parent/download/glob-parent-5.1.2.tgz}
