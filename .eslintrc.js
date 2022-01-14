@@ -37,12 +37,20 @@ module.exports = {
     }
   ],
   rules: {
+    /**
+     *  eslint: http://eslint.cn/docs/rules/
+     *  TS:     https://typescript-eslint.io/rules/explicit-module-boundary-types/#rule-details
+     *  Vue:    https://eslint.vuejs.org/rules/
+     */
+
     // js/ts
     semi: ["error", "always"],
+    "no-extra-semi": "off",
     quotes: ["error", "double"],
     "no-console": ["warn", { allow: ["error"] }],
     "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
     camelcase: ["error", { properties: "never" }],
+    indent: "off",
 
     "no-var": "error",
     "no-empty": ["error", { allowEmptyCatch: true }],
@@ -58,6 +66,38 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
     "@typescript-eslint/consistent-type-imports": ["error", { disallowTypeAnnotations: false }],
+    "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        selector: "interface",
+        format: ["PascalCase"],
+        custom: {
+          regex: "^I[A-Z]",
+          match: true
+        }
+      }
+    ],
+
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: false
+        },
+        multilineDetection: "brackets"
+      }
+    ],
 
     // Vue
     "vue/multi-word-component-names": "off",

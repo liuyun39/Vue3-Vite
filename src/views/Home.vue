@@ -3,14 +3,20 @@
 </template>
 <script lang="ts">
 import { defineComponent, nextTick, reactive, ref } from "vue";
+import { ElForm, ElMessageBox, ElMessage, ElMenuItem } from "element-plus";
+import type { IUpdata } from "../api/login/type";
 
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
   name: "",
   components: {},
   props: {},
-  setup(props) {
-    return {};
+  emits: ["todo"],
+  setup(props, { emit }) {
+    const update: IUpdata = {
+      color: "red"
+    };
+    emit("todo");
+    return { update };
   }
 });
 </script>
