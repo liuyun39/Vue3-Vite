@@ -1,8 +1,0 @@
-# Ignore artifacts:
-dist
-.local
-node_modules
-**/*.svg
-**/*.sh
-/public/*
-pnpm-lock.yaml

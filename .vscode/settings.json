@@ -1,0 +1,23 @@
+{
+  "cSpell.words": ["Element Plus", "element-plus"],
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnPaste": true,
+  "npm.packageManager": "pnpm",
+  "eslint.probe": [
+    "javascript",
+    "typescript",
+    "html",
+    "vue",
+  ],
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "html",
+    "vue",
+  ],
+  "vite.devCommand": "pnpm run dev -- --",
+}

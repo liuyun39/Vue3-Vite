@@ -6,9 +6,8 @@ import App from "./App.vue";
 
 import router from "@/router/index";
 
-const app = createApp(App);
-
-app.use(ElementPlus);
-app.use(router);
-app.use(createPinia());
-app.mount("#app");
+createApp(App)
+  .use(ElementPlus)
+  .use(router)
+  .use(createPinia())
+  .mount("#app");

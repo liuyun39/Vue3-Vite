@@ -1,33 +1,30 @@
 <template>
-  <el-button id="btn" class="title" style="font-size: 12px"></el-button>
-
-  <div></div>
+  <el-buitton
+    id="asd"
+    class="asd23asd" />
 </template>
 <script lang="ts">
-  import { defineComponent, nextTick, reactive, ref } from "vue";
-  import { ElForm, ElMessageBox, ElMessage, ElMenuItem } from "element-plus";
-  import type { IUpdata } from "../api/login/type";
+import {
+	defineComponent,
+	nextTick,
+	reactive,
+	ref,
+} from "vue";
 
-  export default defineComponent({
-    name: "",
-    components: {},
-    props: {},
-    emits: ["todo"],
-    setup(props, { emit }) {
-      const update: IUpdata = {
-        color: "red"
-      };
-      function todo(params: string) {
-        return params;
-      }
-      emit("todo");
-      return { update, todo };
-    }
-  });
+import { ElForm, ElMessageBox, ElMessage } from "element-plus";
+export default defineComponent({
+	name: "",
+	components:{
+	},
+	props: {},
+	setup (props) {
+		return {
+
+		};
+	}
+});
 </script>
 
 <style lang="scss" scoped>
-  .title {
-    color: yellow;
-  }
+
 </style>

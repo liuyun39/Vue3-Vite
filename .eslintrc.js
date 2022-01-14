@@ -15,13 +15,11 @@ module.exports = {
       tsx: true
     }
   },
-  plugins: ["vue", "@typescript-eslint", "prettier", "import"],
+  plugins: ["vue", "@typescript-eslint", "import"],
   extends: [
-    "plugin:vue/vue3-recommended",
     "eslint:recommended",
+    "plugin:vue/vue3-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:prettier/recommended"
   ],
   overrides: [
     {
@@ -107,24 +105,34 @@ module.exports = {
     "vue/no-v-html": "off",
     "vue/require-default-prop": "off",
     "vue/require-explicit-emits": "off",
-    "vue/html-indent": [
+    "vue/html-indent": ["error", 2],
+    "vue/mustache-interpolation-spacing": ["error", "always"],
+    // TODO
+    "vue/script-indent": ["error", "tab", {
+      "baseIndent": 0,
+      "switchCase": 0,
+      "ignores": []
+    }],
+    "vue/html-closing-bracket-newline": [
       "error",
-      2,
       {
-        attribute: 1,
-        baseIndent: 1,
-        closeBracket: 0,
-        alignAttributesVertically: true,
-        ignores: []
+        "singleline": "never",
+        "multiline": "never"
       }
     ],
-    "vue/max-attributes-per-line": ["off"],
     "vue/component-name-in-template-casing": [
       "error",
       "PascalCase",
       {
         registeredComponentsOnly: true,
         ignores: []
+      }
+    ],
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        singleline: 1,
+        multiline: { max: 1 }
       }
     ],
 
@@ -159,8 +167,5 @@ module.exports = {
         pathGroupsExcludedImportTypes: ["type"]
       }
     ],
-
-    // prettier
-    "prettier/prettier": "error" // TODO
   }
 };
