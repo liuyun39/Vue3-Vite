@@ -1,5 +1,8 @@
 # Ignore artifacts:
 dist
+.local
 node_modules
-coverage
+**/*.svg
+**/*.sh
+/public/*
 pnpm-lock.yaml

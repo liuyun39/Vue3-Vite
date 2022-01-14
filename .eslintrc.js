@@ -15,12 +15,13 @@ module.exports = {
       tsx: true
     }
   },
-  plugins: ["@typescript-eslint", "prettier", "import"],
+  plugins: ["vue", "@typescript-eslint", "prettier", "import"],
   extends: [
+    "plugin:vue/vue3-recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-recommended",
-    "prettier"
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   overrides: [
     {
@@ -44,14 +45,14 @@ module.exports = {
      */
 
     // js/ts
-    semi: ["error", "always"],
+    "semi": ["error", "always"],
     "no-extra-semi": "off",
-    quotes: ["error", "double"],
+    "quotes": ["error", "double"],
     "no-console": ["warn", { allow: ["error"] }],
     "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-    camelcase: ["error", { properties: "never" }],
-    indent: "off",
-
+    "camelcase": ["error", { properties: "never" }],
+    "indent": "off",
+    "space-before-function-paren": "off",
     "no-var": "error",
     "no-empty": ["error", { allowEmptyCatch: true }],
     "no-void": "error",
@@ -60,6 +61,8 @@ module.exports = {
     "object-shorthand": ["error", "always", { ignoreConstructors: false, avoidQuotes: true }],
     "block-scoped-var": "error",
     "no-constant-condition": ["error", { checkLoops: false }],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
 
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -71,7 +74,6 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/naming-convention": [
       "error",
       {
@@ -85,7 +87,7 @@ module.exports = {
     ],
 
     "@typescript-eslint/member-delimiter-style": [
-      "error",
+      "warn",
       {
         multiline: {
           delimiter: "semi",
@@ -105,6 +107,26 @@ module.exports = {
     "vue/no-v-html": "off",
     "vue/require-default-prop": "off",
     "vue/require-explicit-emits": "off",
+    "vue/html-indent": [
+      "error",
+      2,
+      {
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: []
+      }
+    ],
+    "vue/max-attributes-per-line": ["off"],
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase",
+      {
+        registeredComponentsOnly: true,
+        ignores: []
+      }
+    ],
 
     // import
     "import/no-extraneous-dependencies": "off",
