@@ -1,21 +1,21 @@
 <template>
-  <el-button>home</el-button>
+  <div>
+    guide
+  </div>
 </template>
 <script lang="ts">
 import {
 	defineComponent,
-	nextTick,
-	reactive,
-	ref,
 } from "vue";
 
 import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
-	name: "Home",
+	name: "",
 	components:{
 	},
 	props: {},
 	setup (props) {
+
 		return {
 
 		};
