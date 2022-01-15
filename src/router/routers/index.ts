@@ -33,16 +33,32 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/login/Login.vue"),
     meta: {
       title: "Login",
+      hidden: true,
     }
   },
   {
     path: "/404",
     name: "404",
-    component: () => import("@/components/error-page/404.vue"),
+    component: () => import("@/views/error-page/404.vue"),
     meta: {
       title: "404",
+      hidden: true,
     }
   },
+  {
+    path: "/file",
+    redirect: "/file/index",
+    children: [
+      {
+        path: "index",
+        name: "File",
+        component: () => import("@/views/file/index.vue"),
+        meta: {
+          title: "File"
+        }
+      }
+    ],
+  }
 ];
 
 export default routes;

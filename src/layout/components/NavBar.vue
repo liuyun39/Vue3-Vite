@@ -1,5 +1,7 @@
 <template>
-  <el-button>home</el-button>
+  <div class="navbar-content">
+    <div>NavBar</div>
+  </div>
 </template>
 <script lang="ts">
 import {
@@ -11,11 +13,11 @@ import {
 
 import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
-	name: "Home",
+	name: "NavBar",
 	components:{
 	},
-	props: {},
 	setup (props) {
+
 		return {
 
 		};
@@ -24,5 +26,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
+.navbar-content {
+  height: 100%;
+  line-height: 4;
+  padding: 0 30px;
+}
 </style>

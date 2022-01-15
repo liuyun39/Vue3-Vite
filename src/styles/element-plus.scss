@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+.el-menu {
+  border-right: none;
+}
+
+.is-active {
+  color: #3869da !important;
+}
+
+.el-menu-item {
+  height: 40px;
+  line-height: 40px;
+}
+
+.el-menu-item:hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
