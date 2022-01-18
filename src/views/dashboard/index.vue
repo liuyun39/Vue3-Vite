@@ -1,20 +1,16 @@
 <template>
-  <div>
-    guide1
-  </div>
+  <div>dashboard</div>
 </template>
 <script lang="ts">
 import {
 	defineComponent,
 } from "vue";
 
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
-	name: "",
+	name: "Dashboard",
 	components:{
 	},
-	props: {},
-	setup (props) {
+	setup () {
 
 		return {
 

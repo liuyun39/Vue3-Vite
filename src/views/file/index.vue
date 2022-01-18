@@ -1,5 +1,5 @@
 <template>
-  <div />
+  <div>file</div>
 </template>
 <script lang="ts">
 import {

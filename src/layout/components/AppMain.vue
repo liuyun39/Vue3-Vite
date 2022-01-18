@@ -1,28 +1,7 @@
 <template>
-  <div>AppMain</div>
+  <section class="app-main">
+    <keep-alive>
+      <router-view />
+    </keep-alive>
+  </section>
 </template>
-<script lang="ts">
-import {
-	defineComponent,
-	nextTick,
-	reactive,
-	ref,
-} from "vue";
-
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
-export default defineComponent({
-	name: "AppMain",
-	components:{
-	},
-	setup (props) {
-
-		return {
-
-		};
-	}
-});
-</script>
-
-<style lang="scss" scoped>
-
-</style>

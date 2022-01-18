@@ -3,7 +3,9 @@
     <el-menu-item :index="menuIndex?.toString()">
       <el-icon><Setting /></el-icon>
       <template #title>
-        UserName/{{ item?.children?.[0].meta?.title }}
+        <router-link :to="item?.path">
+          UserName/{{ item?.children?.[0].meta?.title }}
+        </router-link>
       </template>
     </el-menu-item>
   </div>
@@ -19,8 +21,7 @@ import {
 } from "@element-plus/icons-vue";
 
 import type { RouteRecordRaw } from "vue-router";
-import type {
-	PropType} from "vue";
+import type { PropType } from "vue";
 export default defineComponent({
 	name: "",
 	components:{

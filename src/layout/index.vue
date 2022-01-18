@@ -8,7 +8,9 @@
         class="layout-aside">
         <Sidebar />
       </el-aside>
-      <el-main><AppMain /></el-main>
+      <el-main>
+        <AppMain />
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -17,14 +19,14 @@ import {
 	defineComponent,
 } from "vue";
 
-import { Sidebar, AppMain, NavBar } from "./components/index";
+import { Sidebar, NavBar, AppMain } from "./components/index";
 export default defineComponent({
 	components:{
 		Sidebar,
-		AppMain,
-		NavBar
+		NavBar,
+		AppMain
 	},
-	setup (props) {
+	setup () {
 		return {
 
 		};
