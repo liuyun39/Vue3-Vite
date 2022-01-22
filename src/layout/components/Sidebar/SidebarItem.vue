@@ -6,8 +6,9 @@
         :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)">
           <template #title>
-            <el-icon><Setting /></el-icon>
-            admin/{{ onlyOneChild.meta?.title }}
+            <Title
+              :icon-class="onlyOneChild.meta.icon as string"
+              :menu-title="onlyOneChild.meta?.title as string" />
           </template>
         </el-menu-item>
       </AppLink>
@@ -17,8 +18,9 @@
       :index="resolvePath(item?.path as string)"
       popper-append-to-body>
       <template #title>
-        <el-icon><Setting /></el-icon>
-        admin/{{ item?.meta?.title }}
+        <Title
+          :icon-class="item?.meta?.icon as string"
+          :menu-title="(item?.meta?.title as string)" />
       </template>
       <SidebarItem
         v-for="(child, idx) in item!.children"
@@ -31,19 +33,17 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import path from "path-browserify";
-
-import {
-	Setting,
-} from "@element-plus/icons-vue";
 import AppLink from "./AppLink.vue";
 
+import Title from "./Title.vue";
 import type { RouteRecordRaw } from "vue-router";
 import type { PropType } from "vue";
+
 import { isExternal } from "@/utils/validate";
 export default defineComponent({
 	components:{
-		Setting,
-		AppLink
+		AppLink,
+		Title
 	},
 	props: {
 		item: {
@@ -55,8 +55,8 @@ export default defineComponent({
 		}
 	},
 	setup (props) {
-		const onlyOneChild = onlyOneChildFn(props.item?.children, props.item);
-		function onlyOneChildFn (children: RouteRecordRaw[] = [], parent?: RouteRecordRaw) {
+		const onlyOneChild: RouteRecordRaw = onlyOneChildFn(props.item?.children, props.item);
+		function onlyOneChildFn (children: RouteRecordRaw[] = [], parent?: RouteRecordRaw): RouteRecordRaw {
 			let target = {} as RouteRecordRaw;
 			const showingChildren = children.filter(item => {
 				if (item.meta && !item.meta.hidden) {
@@ -114,5 +114,4 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
 </style>
