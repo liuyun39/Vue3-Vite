@@ -10,7 +10,7 @@ import SvgIcon from "@/components/SvgIcon.index.vue"; // svg component
 import router from "@/router/index";
 
 createApp(App)
-  .component("SvgIcon", SvgIcon)
+  // .component("SvgIcon", SvgIcon)
   .use(ElementPlus)
   .use(router)
   .use(createPinia())

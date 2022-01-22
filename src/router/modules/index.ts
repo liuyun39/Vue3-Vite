@@ -1,9 +1,10 @@
+/* Router Modules */
+import componentsRouter from "./components";
+
 import type { RouteRecordRaw } from "vue-router";
 
 /* Layout */
 import Layout from "@/layout/index.vue";
-
-/* Router Modules */
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -108,6 +109,7 @@ const routes: RouteRecordRaw[] = [
       }
     ],
   },
+  componentsRouter,
   // 404 page must be placed at the end !!!
   {
     path: "/*",

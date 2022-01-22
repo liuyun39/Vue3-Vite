@@ -27,6 +27,11 @@ label {
   font-weight: 700;
 }
 
+a {
+  text-decoration: none;
+  color: $defaultColor;
+}
+
 .clearfix {
   &:after {
     visibility: hidden;

@@ -5,7 +5,8 @@
         <SidebarItem
           v-for="(route, index) in routes"
           :key="index"
-          :item="route" />
+          :item="route"
+          :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -30,20 +31,8 @@ export default defineComponent({
 		// const route = useRoute();
 		const routes = router.options.routes;
 
-
-		// /**
-		//  * 过滤掉默认隐藏的路由
-		//  */
-		// const noHiddenRoutes = computed(() => {
-		// 	return routes.filter((route) => !route.meta?.hidden);
-		// });
-		// const filterRoutes = computed(() => {
-		// 	return routes.filter((route) => {
-		// 		return route?.meta?.hidden === undefined;
-		// 	});
-		// });
 		return {
-			routes
+			routes,
 		};
 	}
 });

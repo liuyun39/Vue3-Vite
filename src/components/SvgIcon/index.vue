@@ -40,7 +40,7 @@ export default defineComponent({
 		const iconName = computed(() => `#icon-${props.iconClass}`);
 		const svgClass = computed(() => {
 			if (props.className) {
-				return `svg-icon ${  props.className}`;
+				return `svg-icon ${ props.className }`;
 			} else {
 				return "svg-icon";
 			}
