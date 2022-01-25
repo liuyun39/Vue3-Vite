@@ -5,7 +5,7 @@
       wrap-class="scrollbar-wrapper"
       height="93vh">
       <el-menu
-        default-active="0"
+        :default-active="routePath"
         :collapse-transition="false">
         <SidebarItem
           v-for="(route, index) in routes"
@@ -33,11 +33,12 @@ export default defineComponent({
 	},
 	setup () {
 		const router = useRouter();
-		// const route = useRoute();
+		const route = useRoute();
 		const routes = router.options.routes;
 
 		return {
 			routes,
+			routePath: route.path
 		};
 	}
 });
