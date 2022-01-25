@@ -1,5 +1,7 @@
 <template>
-  <el-dropdown :hide-on-click="false">
+  <el-dropdown
+    :hide-on-click="false"
+    trigger="click">
     <el-avatar
       class="navbar-avatar"
       :size="23"
@@ -7,11 +9,16 @@
       <img
         src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png">
     </el-avatar>
+    <el-icon
+      color="#bebfc1"
+      class="avatar-icon">
+      <CaretBottom />
+    </el-icon>
     <template #dropdown>
       <el-dropdown-menu class="navbar-avatar--dropdown">
-        <el-dropdown-item>
-          Signed in as admin
-        </el-dropdown-item>
+        <div class="navbar-drop--title">
+          Signed in as &nbsp;<span style="font-weight: 600;">admin</span>
+        </div>
         <el-dropdown-item divided>
           Your info
         </el-dropdown-item>
@@ -32,9 +39,11 @@
 import {
 	defineComponent
 } from "vue";
+import { CaretBottom } from "@element-plus/icons-vue";
 
 export default defineComponent({
 	components:{
+		CaretBottom
 	},
 	setup () {
 
@@ -51,6 +60,19 @@ export default defineComponent({
 }
 .navbar-avatar {
   cursor: pointer;
+}
+
+.avatar-icon {
+  left: 1px;
+  top: -2px;
+  cursor: pointer;
+}
+
+.navbar-drop--title {
+  font-size: 14px;
+  color: #53575c;
+  cursor: pointer;
+  padding: 5px 16px;
 }
 </style>
 

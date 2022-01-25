@@ -1,13 +1,13 @@
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
   $colors: (
     "primary": (
-      "base": #f6f8fa,
+      "base": #2c974b,
     ),
     "success": (
       "base": #67c23a,
     ),
     "warning": (
-      "base": #e6a23c,
+      "base": #f1e05a,
     ),
     "danger": (
       "base": #f56c6c,
@@ -16,7 +16,7 @@
       "base": #f56c6c,
     ),
     "info": (
-      "base": #909399,
+      "base": #f6f8fa,
     ),
   ),
   // $button-padding-horizontal: (
@@ -26,5 +26,18 @@
     (
       "border-color": transparent,
       "hover-bg-color": transparent,
-    )
+    ),
+  $box-shadow: (
+    "light": 0 0px 0px 0 rgba(0, 0, 0, 0.1),
+  ),
+  $dropdown: (
+    "menuItem-hover-color": #fff,
+    "menuItem-hover-fill": #0969da,
+  ),
+  $border-radius: (
+    "base": 6px,
+  ),
+  $border-color: (
+    "base": #d0d7de,
+  )
 );

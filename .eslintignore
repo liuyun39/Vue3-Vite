@@ -10,3 +10,5 @@ dist
 /src/mock/*
 .local
 .env.*.local
+components.d.ts
+auto-imports.d.ts

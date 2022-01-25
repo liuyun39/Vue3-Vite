@@ -1,8 +1,13 @@
 <template>
   <div>
-    <el-button type="primary">
+    <el-button
+      type="primary"
+      @click="handleClick">
       asd
     </el-button>
+    <el-card>
+      123
+    </el-card>
   </div>
 </template>
 <script lang="ts">
@@ -19,9 +24,11 @@ export default defineComponent({
 	components:{
 	},
 	setup (props) {
-
+		function handleClick() {
+			ElMessage.error("test");
+		}
 		return {
-
+			handleClick
 		};
 	}
 });
