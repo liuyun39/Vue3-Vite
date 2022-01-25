@@ -101,6 +101,7 @@ module.exports = {
     ],
 
     // Vue
+    "vue/comment-directive": "off",
     "vue/multi-word-component-names": "off",
     "vue/no-multiple-template-root": "off",
     "vue/no-v-html": "off",
@@ -108,12 +109,12 @@ module.exports = {
     "vue/require-explicit-emits": "off",
     "vue/html-indent": ["error", 2],
     "vue/mustache-interpolation-spacing": ["error", "always"],
-    // TODO
     "vue/script-indent": ["error", "tab", {
       "baseIndent": 0,
       "switchCase": 0,
       "ignores": []
     }],
+    // TODO
     "vue/html-closing-bracket-newline": [
       "error",
       {

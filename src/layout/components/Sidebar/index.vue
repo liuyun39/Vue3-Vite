@@ -1,7 +1,12 @@
 <template>
   <div class="sidebar-content">
-    <el-scrollbar wrap-class="scrollbar-wrapper">
-      <el-menu default-active="0">
+    <!-- TODO height -->
+    <el-scrollbar
+      wrap-class="scrollbar-wrapper"
+      height="93vh">
+      <el-menu
+        default-active="0"
+        :collapse-transition="false">
         <SidebarItem
           v-for="(route, index) in routes"
           :key="index"

@@ -1,5 +1,9 @@
 <template>
-  <div>file</div>
+  <div>
+    <el-button type="primary">
+      asd
+    </el-button>
+  </div>
 </template>
 <script lang="ts">
 import {

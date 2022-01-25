@@ -1,20 +1,24 @@
 <template>
   <div class="navbar-content">
-    <div>NavBar</div>
+    <div class="navbar-left">
+      <Logo />
+    </div>
+    <div class="navbar-right">
+      <Avatar />
+    </div>
   </div>
 </template>
 <script lang="ts">
 import {
 	defineComponent,
-	nextTick,
-	reactive,
-	ref,
 } from "vue";
-
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
+import Logo from "./Logo.vue";
+import Avatar from "./Avatar.vue";
 export default defineComponent({
 	name: "NavBar",
 	components:{
+		Logo,
+		Avatar
 	},
 	setup (props) {
 
@@ -27,8 +31,11 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
-  line-height: 4;
-  padding: 0 30px;
+  padding: 0 10px;
+  color: #fff;
 }
 </style>

@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .el-menu {
-  border-right: none;
+  border-style: hidden;
 }
 
 .is-active {
@@ -14,8 +14,21 @@
 }
 
 .el-menu-item:hover {
-  background-color: #fff;
   text-decoration: underline;
+}
+
+.el-sub-menu {
+  .el-sub-menu__title {
+    height: 40px;
+  }
+  .el-menu {
+    div {
+      height: 40px;
+      .el-menu-item {
+        height: 40px;
+      }
+    }
+  }
 }
 
 .el-sub-menu__title:hover {

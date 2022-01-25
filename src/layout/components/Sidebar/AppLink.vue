@@ -1,8 +1,8 @@
 <template>
   <component
     :is="showType"
-    :to="external?'':to"
-    v-bind="linkProps(to)">
+    v-bind="linkProps(to)"
+    :to="external?'':to">
     <slot />
   </component>
 </template>
@@ -21,7 +21,7 @@ export default defineComponent({
 	props: {
 		to: {
 			type: String,
-			required: true
+			default: ""
 		}
 	},
 	setup (props) {

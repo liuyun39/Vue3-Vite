@@ -1,5 +1,6 @@
 <template>
-  <SvgIcon :icon-class="iconClass" />
+  <SvgIcon
+    :icon-class="iconClass" />
   <div class="sidebar-title">
     admin/{{ menuTitle }}
   </div>
@@ -17,14 +18,14 @@ export default defineComponent({
 	props: {
 		iconClass: {
 			type: String,
-			required: true
+			default: ""
 		},
 		menuTitle: {
 			type: String,
 			default: ""
 		}
 	},
-	setup (props) {
+	setup () {
 
 		return {
 
