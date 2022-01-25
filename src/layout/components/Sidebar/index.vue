@@ -5,7 +5,7 @@
       wrap-class="scrollbar-wrapper"
       height="93vh">
       <el-menu
-        :default-active="routePath"
+        :default-active="curentRoute"
         :collapse-transition="false">
         <SidebarItem
           v-for="(route, index) in routes"
@@ -19,9 +19,8 @@
 <script lang="ts">
 import {
 	defineComponent,
-	computed,
+	computed
 } from "vue";
-
 
 import { useRouter, useRoute } from "vue-router";
 import SidebarItem from "./SidebarItem.vue";
@@ -35,10 +34,10 @@ export default defineComponent({
 		const router = useRouter();
 		const route = useRoute();
 		const routes = router.options.routes;
-
+		const curentRoute = computed(() => route.path);
 		return {
 			routes,
-			routePath: route.path
+			curentRoute
 		};
 	}
 });
