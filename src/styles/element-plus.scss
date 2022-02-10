@@ -15,12 +15,16 @@
 .el-sub-menu {
   .el-sub-menu__title {
     height: 35px;
+    .el-sub-menu__icon-arrow {
+      display: none;
+    }
   }
   .el-menu {
     div {
       height: 35px;
       .el-menu-item {
         height: 35px;
+        padding-left: 26px !important;
       }
     }
   }
@@ -59,4 +63,17 @@
       }
     }
   }
+}
+
+.el-collapse-transition-enter-active {
+  transition-duration: 0ms !important;
+}
+.el-collapse-transition-enter-to {
+  transition-duration: 0ms !important;
+}
+.el-collapse-transition-leave-active {
+  transition-duration: 0ms !important;
+}
+.el-collapse-transition-leave-to {
+  transition-duration: 0ms !important;
 }
