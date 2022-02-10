@@ -2,37 +2,50 @@
   <div>
     <el-button
       type="primary"
-      @click="handleClick">
-      asd
+      @click="showExcelUpload">
+      打开批量上传组件
     </el-button>
-    <el-card>
-      123
-    </el-card>
+    <ExcelUpload
+      ref="excelUploadRef"
+      title="用户信息导入"
+      temp-name="用户信息.xlsx"
+      :temp-url="'xxx'"
+      @on-upload-success="refresh" />
   </div>
 </template>
 <script lang="ts">
 import {
 	defineComponent,
-	nextTick,
-	reactive,
-	ref,
+	shallowRef,
 } from "vue";
+import ExcelUpload from "./components//ExcelUpload.vue";
 
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
-	name: "",
 	components:{
+		ExcelUpload
 	},
-	setup (props) {
-		function handleClick() {
-			ElMessage.error("test");
+	setup () {
+		const excelUploadRef = shallowRef<InstanceType<typeof ExcelUpload>>();
+		function  showExcelUpload() {
+			excelUploadRef.value?.show();
+		}
+		function refresh () {
+			// 批量上传成功后的一些操作
+			// tableRef.value?.search();
 		}
 		return {
-			handleClick
+			refresh,
+			excelUploadRef,
+			showExcelUpload,
 		};
 	}
 });
 </script>
 
 <style lang="scss" scoped>
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

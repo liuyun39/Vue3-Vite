@@ -22,12 +22,20 @@
         <el-dropdown-item divided>
           Your info
         </el-dropdown-item>
-        <el-dropdown-item divided>
-          Github
-        </el-dropdown-item>
-        <el-dropdown-item>
-          Gitee
-        </el-dropdown-item>
+        <a
+          target="_blank"
+          href="https://github.com/liuyun39/Vue3-Vite">
+          <el-dropdown-item divided>
+            Github
+          </el-dropdown-item>
+        </a>
+        <a
+          target="_blank"
+          href="https://gitee.com/webkaifawonengxing/Vue3-Vite-Template">
+          <el-dropdown-item divided>
+            Gitee
+          </el-dropdown-item>
+        </a>
         <el-dropdown-item>
           Sign out
         </el-dropdown-item>

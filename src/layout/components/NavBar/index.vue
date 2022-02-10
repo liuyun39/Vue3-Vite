@@ -2,7 +2,7 @@
   <div class="navbar-content">
     <div class="navbar-left">
       <Logo />
-      <Input />
+      <Breadcrumb />
     </div>
     <div class="navbar-right">
       <Avatar />
@@ -15,13 +15,13 @@ import {
 } from "vue";
 import Logo from "./Logo.vue";
 import Avatar from "./Avatar.vue";
-import Input from "./Input.vue";
+import Breadcrumb from "./Breadcrumb.vue";
 export default defineComponent({
 	name: "NavBar",
 	components:{
 		Logo,
 		Avatar,
-		Input
+		Breadcrumb
 	},
 	setup () {
 
