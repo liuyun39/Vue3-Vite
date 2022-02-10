@@ -35,3 +35,28 @@
   color: #000 !important;
   text-decoration: underline;
 }
+
+.el-breadcrumb {
+  .el-breadcrumb__item {
+    .el-breadcrumb__separator {
+      margin: 0 4px;
+    }
+    .el-breadcrumb__inner {
+      color: $navbarText;
+      a {
+        font-weight: 400;
+        color: $navbarText;
+        &:hover {
+          color: $navbarTextHover;
+        }
+      }
+      span {
+        color: $navbarText;
+        cursor: pointer;
+        &:hover {
+          color: $navbarTextHover;
+        }
+      }
+    }
+  }
+}
