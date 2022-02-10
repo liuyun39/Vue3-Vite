@@ -1,5 +1,6 @@
 /* Router Modules */
 import componentsRouter from "./components";
+import fileRouter from "./file";
 
 import type { RouteRecordRaw } from "vue-router";
 
@@ -96,19 +97,7 @@ const routes: RouteRecordRaw[] = [
       }
     ]
   },
-  {
-    path: "/file",
-    component: Layout,
-    redirect: "/file/index",
-    children: [
-      {
-        path: "index",
-        name: "File",
-        component: () => import("@/views/file/index.vue"),
-        meta: { title: "File", icon: "file" }
-      }
-    ],
-  },
+  fileRouter,
   componentsRouter,
   // 404 page must be placed at the end !!!
   {

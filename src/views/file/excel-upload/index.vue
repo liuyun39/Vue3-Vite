@@ -18,7 +18,7 @@ import {
 	defineComponent,
 	shallowRef,
 } from "vue";
-import ExcelUpload from "./components//ExcelUpload.vue";
+import ExcelUpload from "./ExcelUpload.vue";
 
 export default defineComponent({
 	components:{
