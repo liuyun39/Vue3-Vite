@@ -1,3 +1,5 @@
+import "@babel/polyfill";
+
 import { createApp } from "vue";
 import "element-plus/dist/index.css";
 import "@/styles/index.scss"; // global css
