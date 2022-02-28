@@ -1,6 +1,6 @@
 <template>
   <div v-if="!item?.meta?.hidden">
-    <template v-if="hasOneShowingChild(item?.children)&&!onlyOneChild.children&&!item?.meta?.alwaysShow">
+    <template v-if="hasOneShowingChild(item?.children)&&!item?.meta?.alwaysShow">
       <AppLink
         v-if="onlyOneChild.meta"
         :to="resolvePath(onlyOneChild.path)">

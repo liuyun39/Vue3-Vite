@@ -1,6 +1,7 @@
 /* Router Modules */
 import componentsRouter from "./components";
 import fileRouter from "./file";
+import errorRouter from "./error";
 
 import type { RouteRecordRaw } from "vue-router";
 
@@ -75,12 +76,13 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     component: Layout,
     redirect: "/dashboard",
+    name: "Dashboard",
     children: [
       {
         path: "dashboard",
-        component: () => import("@/views/dashboard/index.vue"),
         name: "Dashboard",
-        meta: { title: "Dashboard", icon: "dashboard"}
+        component: () => import("@/views/dashboard/index.vue"),
+        meta: { title: "Dashboard", icon: "dashboard" },
       }
     ]
   },
@@ -91,14 +93,15 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: "index",
-        component: () => import("@/views/guide/index.vue"),
         name: "Guide",
-         meta: { title: "Guide", icon: "guide"}
+        component: () => import("@/views/guide/index.vue"),
+        meta: { title: "Guide", icon: "guide"},
       }
     ]
   },
   fileRouter,
   componentsRouter,
+  errorRouter,
   // 404 page must be placed at the end !!!
   {
     path: "/*",

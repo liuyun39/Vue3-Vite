@@ -35,6 +35,7 @@ export default defineComponent({
 		const route = useRoute();
 		const routes = router.options.routes;
 		const curentRoute = computed(() => route.path);
+
 		return {
 			routes,
 			curentRoute
