@@ -1,7 +1,9 @@
 /* Router Modules */
-import componentsRouter from "./components";
+import dataRouter from "./data";
 import fileRouter from "./file";
 import errorRouter from "./error";
+import audioRouter from "./audio";
+
 
 import type { RouteRecordRaw } from "vue-router";
 
@@ -100,8 +102,9 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   fileRouter,
-  componentsRouter,
+  dataRouter,
   errorRouter,
+  audioRouter,
   // 404 page must be placed at the end !!!
   {
     path: "/*",

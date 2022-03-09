@@ -1,6 +1,6 @@
 <template>
   <div>
-    drag-dialog
+    show
   </div>
 </template>
 <script lang="ts">
