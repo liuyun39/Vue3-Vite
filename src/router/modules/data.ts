@@ -22,6 +22,12 @@ const componentsRouter = {
       name: "Show",
       meta: { title: "show" }
     },
+    {
+      path: "tableTile",
+      component: () => import("@/views/data/TableTitle.vue"),
+      name: "tableTile",
+      meta: { title: "tableTile" }
+    },
   ]
 };
 

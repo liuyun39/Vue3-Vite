@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Common: typeof import('./src/components/LyChart/common/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
@@ -19,7 +20,11 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
-    ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
+    Line: typeof import('./src/components/LyChart/line/index.vue')['default']
+    LyFilter: typeof import('./src/components/LyFilter/index.vue')['default']
+    LyTable: typeof import('./src/components/LyTable/index.vue')['default']
     OverShowTip: typeof import('./src/components/OverShowTip/index.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
   }
