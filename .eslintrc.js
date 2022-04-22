@@ -107,7 +107,7 @@ module.exports = {
     "vue/no-v-html": "off",
     "vue/require-default-prop": "off",
     "vue/require-explicit-emits": "off",
-    "vue/html-indent": ["error", 4],
+    "vue/html-indent": ["error", 2],
     "vue/mustache-interpolation-spacing": ["error", "always"],
     "vue/script-indent": ["error", "tab", {
       "baseIndent": 0,
@@ -119,7 +119,7 @@ module.exports = {
       "error",
       {
         "singleline": "never",
-        "multiline": "never"
+        "multiline": "always"
       }
     ],
     "vue/component-name-in-template-casing": [
@@ -134,7 +134,7 @@ module.exports = {
       "error",
       {
         singleline: 1,
-        multiline: { max: 1 }
+        multiline: 1
       }
     ],
 
