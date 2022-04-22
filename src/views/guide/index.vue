@@ -1,6 +1,6 @@
 <template>
   <div>
-    guide1
+    guide
   </div>
 </template>
 <script lang="ts" setup>

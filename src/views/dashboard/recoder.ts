@@ -1,18 +1,14 @@
 import Recorder from "js-audio-recorder";
 import { ElMessage } from "element-plus";
-// import { ILogger } from "@/utils/log";
 
-interface ShimsRecorder extends Recorder {
+interface IShimsRecorder extends Recorder {
   // js-audio-recorder 的 ts 文件缺少的了该实例方法的类型声明
   getPermission (): Promise<void>;
 }
-const logger = new ILogger({
-  componentName: "VoicePrintRecord"
-});
 
 class PCMRecorder {
   public isBrowserCanRecord = false;
-  public recorder: ShimsRecorder | null = null;
+  public recorder: IShimsRecorder | null = null;
   private hasRecordPermission = false;
 
   constructor () {
@@ -22,10 +18,10 @@ class PCMRecorder {
         sampleBits: 16,                 // 采样位数，支持 8 或 16，默认是16
         sampleRate: 16000,              // 采样率，支持 11025、16000、22050、24000、44100、48000，根据浏览器默认值，chrome是48000
         numChannels: 1,                 // 声道，支持 1 或 2， 默认是 1.
-      }) as ShimsRecorder;
+      }) as IShimsRecorder;
       this.isBrowserCanRecord = true;
     } catch (e) {
-      logger.error("初始化 js-audio-recorder 实例失败:", e);
+      console.error("初始化 js-audio-recorder 实例失败:", e);
       this.isBrowserCanRecord = false;
     }
   }
@@ -52,7 +48,7 @@ class PCMRecorder {
           this.hasRecordPermission = false;
         } else {
           ElMessage.info("浏览器无权限使用麦克风");
-          logger.error("js-audio-recorder getPermission() 失败:", error);
+          console.error("js-audio-recorder getPermission() 失败:", error);
           this.hasRecordPermission = false;
         }
         return false;
