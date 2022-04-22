@@ -1,68 +1,84 @@
 <template>
-  <div>
-    <button @click="start">
-      开始录音
-    </button>
-    <button @click="stop">
-      结束录音
-    </button>
-    <button @click="bofang">
-      录音播放
-    </button>
-    <button @click="handleData">
-      获取数据
-    </button>
-    <div>{{ blobsData }}</div>
-
-    <div>-----------------</div>
-    <div class="record-content">
-      <div class="record-content--control">
-        <el-button v-if="!startRecord">
-          开始录音
-        </el-button>
-        <el-button v-else>
-          结束录音
-        </el-button>
-      </div>
+    <div class="audio-content">
+        <div class="audio-left">
+            <el-switch
+                v-model="playing" />
+            <div class="audio-progress">
+                <el-slider
+                    v-model="currentTime"
+                    :format-tooltip="formatTooltip"
+                    :max="duration"
+                    style="width: 200px" />
+            </div>
+        </div>
+        <div class="audio-title">
+            {{ playing ? '音乐播放中。。。' : '未播放音乐。。。' }}
+        </div>
+        <audio ref="audioRef" />
     </div>
-  </div>
 </template>
+
 <script lang="ts">
-import {
-	defineComponent,
-	nextTick,
-	onMounted,
-	reactive,
-	ref,
-} from "vue";
+import { defineComponent, onMounted, ref } from "vue";
+import { useMediaControls } from "@vueuse/core";
 
-import { ElForm, ElMessageBox, ElMessage } from "element-plus";
-
-export default defineComponent({
-	components:{
+export default defineComponent ({
+	components: {
 	},
-	setup (props) {
-		const startRecord = ref(false);
+	setup () {
+		const audioRef = ref<HTMLAudioElement>();
+		const { playing, currentTime, duration, volume } = useMediaControls( audioRef, {
+			src: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",
+		});
 
+		const totalTime = ref(0);
+		onMounted(() => {
+			totalTime.value = duration.value;
+		});
 
+		function formatTooltip (v: number) {
+			return `${addZero((v / 60).toFixed(0))}:${addZero((v % 60).toFixed(0))}`;
+		}
 
+		function addZero (v: string) {
+			return parseFloat(v) <= 9 ? `0${v}` : v;
+		}
 		return {
-			startRecord,
+			playing,
+			currentTime,
+			duration,
+			totalTime,
+			audioRef,
+
+			formatTooltip
 		};
 	}
 });
 </script>
 
 <style lang="scss" scoped>
-.record-content {
-  width: 800px;
-  height: 50px;
-  border: 1px solid #ccc;
-
-  &--control {
-    height: 100%;
+.audio-content {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-  }
+    width: 600px;
+    margin: auto;
+    padding: 0 12px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #000;
+
+    .audio-left {
+        display: flex;
+        .audio-progress {
+            margin-left: 12px;
+        }
+    }
+    .audio-title {
+        display: flex;
+        justify-content: start;
+    }
+
 }
 </style>

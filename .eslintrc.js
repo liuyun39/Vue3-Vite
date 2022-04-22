@@ -107,7 +107,7 @@ module.exports = {
     "vue/no-v-html": "off",
     "vue/require-default-prop": "off",
     "vue/require-explicit-emits": "off",
-    "vue/html-indent": ["error", 2],
+    "vue/html-indent": ["error", 4],
     "vue/mustache-interpolation-spacing": ["error", "always"],
     "vue/script-indent": ["error", "tab", {
       "baseIndent": 0,
