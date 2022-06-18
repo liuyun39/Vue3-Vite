@@ -1,11 +1,10 @@
 <template>
   <section class="app-main">
     <router-view
-      v-slot="{ Component }">
-      <transition
-        name="fade-transition"
-        mode="out-in">
-        <component :is="Component" />
+      v-slot="{ Component }"
+    >
+      <transition>
+        <div><component :is="Component" /></div>
       </transition>
     </router-view>
   </section>

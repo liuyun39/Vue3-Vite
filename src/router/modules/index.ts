@@ -4,6 +4,8 @@ import fileRouter from "./file";
 import errorRouter from "./error";
 import g6Router from "./g6";
 import componentsRouter from "./components";
+import aesRouter from "./aes";
+import fileShowRouter from "./showTxt";
 
 
 import type { RouteRecordRaw } from "vue-router";
@@ -107,6 +109,8 @@ const routes: RouteRecordRaw[] = [
   errorRouter,
   g6Router,
   componentsRouter,
+  aesRouter,
+  fileShowRouter,
   // 404 page must be placed at the end !!!
   {
     path: "/*",

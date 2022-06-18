@@ -45,6 +45,7 @@ module.exports = {
     // js/ts
     "semi": ["error", "always"],
     "no-extra-semi": "off",
+    "no-debugger": 0,
     "quotes": ["error", "double"],
     "no-console": ["warn", { allow: ["error"] }],
     "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
