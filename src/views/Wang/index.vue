@@ -1,10 +1,7 @@
 <template>
-  <div>123</div>
-  <Editor
-    :init="{
-      plugins: 'lists link image table code help wordcount'
-    }"
-  />
+  <div>
+    123
+  </div>
 </template>
 <script lang="ts">
 import {
@@ -13,15 +10,15 @@ import {
 	reactive,
 	ref,
 } from "vue";
-import Editor from "@tinymce/tinymce-vue";
+
 import { ElForm, ElMessageBox, ElMessage } from "element-plus";
 export default defineComponent({
 	components:{
-		Editor
 	},
 	setup (props) {
 
 		return {
+
 		};
 	}
 });
